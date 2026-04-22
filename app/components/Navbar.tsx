@@ -127,8 +127,8 @@ export default function Navbar() {
           <Image
             src={LOGO_URL}
             alt="IDMAROUK Négoce"
-            width={120}
-            height={50}
+            width={160}
+            height={65}
             style={{ height: "48px", width: "auto" }}
             className="object-contain transition-all duration-300 brightness-90"
             unoptimized
