@@ -56,19 +56,19 @@ export const PRODUCTS = [
 ];
 
 export const GALLERY_IMAGES = [
-  { src: "/images/imgi_2_idmarouk1.jpg",   alt: "Idmarouk Négoce — 01" },
-  { src: "/images/imgi_4_idmarouk2.jpg",   alt: "Idmarouk Négoce — 02" },
-  { src: "/images/imgi_5_idmarouk3.jpg",   alt: "Idmarouk Négoce — 03" },
-  { src: "/images/imgi_6_idmarouk4.jpg",   alt: "Idmarouk Négoce — 04" },
-  { src: "/images/imgi_7_idmarouk5.jpg",   alt: "Idmarouk Négoce — 05" },
-  { src: "/images/imgi_8_idmarouk6.jpg",   alt: "Idmarouk Négoce — 06" },
-  { src: "/images/imgi_9_idmarouk7.jpg",   alt: "Idmarouk Négoce — 07" },
-  { src: "/images/imgi_10_idmarouk8.jpg",  alt: "Idmarouk Négoce — 08" },
-  { src: "/images/imgi_11_idmarouk9.jpg",  alt: "Idmarouk Négoce — 09" },
-  { src: "/images/imgi_12_idmarouk10.jpg", alt: "Idmarouk Négoce — 10" },
-  { src: "/images/imgi_13_idmarouk11.jpg", alt: "Idmarouk Négoce — 11" },
-  { src: "/images/imgi_14_idmarouk12.jpg", alt: "Idmarouk Négoce — 12" },
-  { src: "/images/imgi_15_idmarouk13.jpg", alt: "Idmarouk Négoce — 13" },
+  { src: "/images/imgi_2_idmarouk1.avif",   alt: "Idmarouk Négoce — 01" },
+  { src: "/images/imgi_4_idmarouk2.avif",   alt: "Idmarouk Négoce — 02" },
+  { src: "/images/imgi_5_idmarouk3.avif",   alt: "Idmarouk Négoce — 03" },
+  { src: "/images/imgi_6_idmarouk4.avif",   alt: "Idmarouk Négoce — 04" },
+  { src: "/images/imgi_7_idmarouk5.avif",   alt: "Idmarouk Négoce — 05" },
+  { src: "/images/imgi_8_idmarouk6.avif",   alt: "Idmarouk Négoce — 06" },
+  { src: "/images/imgi_9_idmarouk7.avif",   alt: "Idmarouk Négoce — 07" },
+  { src: "/images/imgi_10_idmarouk8.avif",  alt: "Idmarouk Négoce — 08" },
+  { src: "/images/imgi_11_idmarouk9.avif",  alt: "Idmarouk Négoce — 09" },
+  { src: "/images/imgi_12_idmarouk10.avif", alt: "Idmarouk Négoce — 10" },
+  { src: "/images/imgi_13_idmarouk11.avif", alt: "Idmarouk Négoce — 11" },
+  { src: "/images/imgi_14_idmarouk12.avif", alt: "Idmarouk Négoce — 12" },
+  { src: "/images/imgi_15_idmarouk13.avif", alt: "Idmarouk Négoce — 13" },
 ];
 
 export const VALUES = [
