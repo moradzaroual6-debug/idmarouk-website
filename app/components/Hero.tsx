@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { SITE } from "@/app/lib/data";
 
-const HERO_BG = "http://www.idmarouk.ma/img/bg-home5.jpg";
+const HERO_BG = "/images/hero.jpg";
 
 export default function Hero() {
   const bgRef = useRef<HTMLDivElement>(null);
