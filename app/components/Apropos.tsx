@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { SITE } from "@/app/lib/data";
 
-const HERO_IMAGE = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_CAocKN9ANTLs_Yb8UBmspYsZLxJMsx2EYS-cVIjD8zeTZVakj6h_N9gA8GzvFGwnp3VYqJQEsY_6I-G-JKiyazYy4dQ_s9L9wFsCj0W4vwHNQBtv0tEePCHBtk01XXsDIlxLWJz1_5sz7XhbYDtx1-t8_y7BPzzE30G6umf2KNpUJLI8nXaSMs8EnGw/s1600/Gemini_Generated_Image_wg6ya2wg6ya2wg6y%20%281%29.png";
+const HERO_IMAGE = "/images/idmarouk-usine.avif";
 
 // ── Timeline milestones ──────────────────────────────────────────────────────
 const milestones = [
@@ -178,10 +178,9 @@ export default function Apropos() {
             >
               <Image
                 src={HERO_IMAGE}
-                alt="IDMAROUK Négoce — bois noble"
+                alt="Dépôt de bois IDMAROUK Négoce à Agadir"
                 fill
                 className="object-cover object-center"
-                unoptimized
                 priority
               />
               {/* subtle edge vignettes so the pan transition looks seamless */}

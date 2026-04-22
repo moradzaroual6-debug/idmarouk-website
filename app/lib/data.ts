@@ -92,4 +92,3 @@ export const VALUES = [
 
 export const LOGO_URL = "/logo.png";
 export const HERO_BG = "/images/hero.jpg"; // استعملت التصويرة المحلية
-export const SYMODD_LOGO = "http://www.idmarouk.ma/img/symodd.png";
