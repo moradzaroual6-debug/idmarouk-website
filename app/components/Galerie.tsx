@@ -5,9 +5,9 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ZoomIn, X, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import Reveal from "./Reveal";
-import { GALLERY_IMAGES } from "@/app/lib/data";
+import { GALLERY_IMAGES } from "@/app/lib/data"; // كيقرا من التحديث الجديد اللي درنا
 
-// Build slides: alternates between single hero and 3-image cluster
+// نظام تقسيم الصور لشرائح (Slides)
 function buildSlides(images: typeof GALLERY_IMAGES) {
   const slides: { type: "hero" | "cluster"; images: typeof GALLERY_IMAGES }[] = [];
   let i = 0;
@@ -45,14 +45,12 @@ export default function Galerie() {
   const next = useCallback(() => goTo(current + 1), [current, goTo]);
   const prev = useCallback(() => goTo(current - 1), [current, goTo]);
 
-  // Auto-advance
   useEffect(() => {
     if (paused || lightboxIndex !== null) return;
     intervalRef.current = setInterval(next, SLIDE_DURATION);
     return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
   }, [next, paused, lightboxIndex]);
 
-  // Progress bar
   useEffect(() => {
     if (paused || lightboxIndex !== null) return;
     setProgress(0);
@@ -63,7 +61,6 @@ export default function Galerie() {
     return () => { if (progressRef.current) clearInterval(progressRef.current); };
   }, [current, paused, lightboxIndex]);
 
-  // Lightbox
   const openLightbox = (i: number) => {
     setLightboxIndex(i);
     document.body.style.overflow = "hidden";
@@ -98,7 +95,6 @@ export default function Galerie() {
       className="bg-brand-black px-6 md:px-24"
       style={{ paddingTop: "clamp(80px,10vw,140px)", paddingBottom: "clamp(80px,10vw,140px)" }}
     >
-      {/* Header */}
       <div className="flex items-end justify-between mb-14 flex-wrap gap-4">
         <div>
           <Reveal>
@@ -129,7 +125,6 @@ export default function Galerie() {
         </Reveal>
       </div>
 
-      {/* Carousel */}
       <div className="relative w-full" style={{ height: "clamp(340px, 55vw, 600px)" }}>
         <AnimatePresence mode="wait">
           <motion.div
@@ -141,7 +136,6 @@ export default function Galerie() {
             className="absolute inset-0"
           >
             {slide.type === "hero" ? (
-              /* ── HERO SLIDE: one full-width image ── */
               <div
                 className="relative w-full h-full overflow-hidden cursor-zoom-in group"
                 onClick={() => openLightbox(GALLERY_IMAGES.indexOf(slide.images[0]))}
@@ -152,15 +146,12 @@ export default function Galerie() {
                   fill
                   className="object-cover transition-all duration-700 brightness-80 group-hover:brightness-95 group-hover:scale-[1.03]"
                   unoptimized
-                  loading="lazy"
                 />
-                {/* Gold corner accent */}
                 <span className="absolute top-5 left-5 w-8 h-8 border-t-2 border-l-2 border-brand-gold opacity-60" />
                 <span className="absolute bottom-5 right-5 w-8 h-8 border-b-2 border-r-2 border-brand-gold opacity-60" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-all duration-300 flex items-center justify-center">
                   <ZoomIn size={32} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                {/* Caption strip */}
                 <div className="absolute bottom-0 left-0 right-0 px-6 py-4 bg-gradient-to-t from-black/70 to-transparent">
                   <p className="font-sans font-light text-[11px] tracking-[0.25em] uppercase text-white/60">
                     {slide.images[0].alt}
@@ -168,9 +159,7 @@ export default function Galerie() {
                 </div>
               </div>
             ) : (
-              /* ── CLUSTER SLIDE: 1 large + 2 small stacked ── */
               <div className="grid h-full gap-[3px]" style={{ gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr" }}>
-                {/* Large image spans 2 rows on left */}
                 {slide.images[0] && (
                   <div
                     className="relative overflow-hidden cursor-zoom-in group row-span-2"
@@ -182,14 +171,12 @@ export default function Galerie() {
                       fill
                       className="object-cover transition-all duration-700 brightness-80 group-hover:brightness-100 group-hover:scale-[1.04]"
                       unoptimized
-                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                       <ZoomIn size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                   </div>
                 )}
-                {/* Two small images stacked on right */}
                 {slide.images.slice(1).map((img) => (
                   <div
                     key={img.src}
@@ -202,7 +189,6 @@ export default function Galerie() {
                       fill
                       className="object-cover transition-all duration-700 brightness-75 group-hover:brightness-100 group-hover:scale-[1.04]"
                       unoptimized
-                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                       <ZoomIn size={20} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -214,7 +200,6 @@ export default function Galerie() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Prev / Next */}
         <button
           onClick={prev}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 border border-white/20 bg-black/40 text-white flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-black transition-all duration-300"
@@ -229,9 +214,7 @@ export default function Galerie() {
         </button>
       </div>
 
-      {/* Controls bar */}
       <div className="flex items-center gap-6 mt-6">
-        {/* Progress bar */}
         <div className="flex-1 h-px bg-white/10 relative overflow-hidden">
           <motion.div
             className="absolute left-0 top-0 h-full bg-brand-gold"
@@ -239,8 +222,6 @@ export default function Galerie() {
             transition={{ ease: "linear" }}
           />
         </div>
-
-        {/* Dot indicators */}
         <div className="flex items-center gap-2">
           {slides.map((_, i) => (
             <button
@@ -254,22 +235,17 @@ export default function Galerie() {
             />
           ))}
         </div>
-
-        {/* Pause / Play */}
         <button
           onClick={() => setPaused((p) => !p)}
           className="w-8 h-8 border border-white/20 text-white/40 flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-all duration-300"
         >
           {paused ? <Play size={13} /> : <Pause size={13} />}
         </button>
-
-        {/* Slide counter */}
         <span className="font-sans font-light text-[11px] tracking-[0.2em] text-white/30 tabular-nums">
           {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
         </span>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {lightboxIndex !== null && (
           <motion.div
@@ -292,17 +268,23 @@ export default function Galerie() {
             >
               <ChevronLeft size={20} />
             </button>
-            <motion.img
+            <motion.div
               key={lightboxIndex}
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: 0.25 }}
-              src={GALLERY_IMAGES[lightboxIndex].src}
-              alt={GALLERY_IMAGES[lightboxIndex].alt}
-              className="max-w-[90vw] max-h-[90vh] object-contain"
+              className="relative w-[90vw] h-[80vh]"
               onClick={(e) => e.stopPropagation()}
-            />
+            >
+              <Image
+                src={GALLERY_IMAGES[lightboxIndex].src}
+                alt={GALLERY_IMAGES[lightboxIndex].alt}
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </motion.div>
             <button
               className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-brand-black transition-all duration-300 z-10"
               onClick={(e) => { e.stopPropagation(); lbNext(); }}

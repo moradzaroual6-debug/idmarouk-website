@@ -4,7 +4,7 @@ export const SITE = {
   founded: "1985",
   founder: "M. Mohamed Aderdour",
   location: "Sidi Bibi, Région Agadir, Maroc",
-  phone: "+212 5 28 XX XX XX",
+  phone: "+212 5 28 XX XX XX", // تقدر تبدلو بالرقم الحقيقي هنا
   email: "contact@idmarouk.ma",
   coords: { lat: 30.24482515448503, lng: -9.52213591534262 },
 };
@@ -27,38 +27,49 @@ export const STATS = [
 export const PRODUCTS = [
   {
     number: "01",
-    title: "Bois Durs & Exotiques",
+    title: "Hardwood & Exotic Woods", // استعملت الترجمة اللي اقترحنا
     description:
       "Essences nobles sélectionnées pour leur résistance, leur beauté et leur durabilité exceptionnelle.",
     items: ["Chêne, Hêtre, Frêne", "Teck, Merbau, Iroko", "Wengé, Sapelli, Acajou", "Certification PEFC disponible"],
   },
   {
     number: "02",
-    title: "Bois de Sciage",
+    title: "Sawn Timber", // استعملت الترجمة اللي اقترحنا
     description:
       "Planches et sections variées pour la construction, la charpente, la menuiserie et l'ameublement.",
     items: ["Planches brutes et rabotées", "Chevrons et poutres", "Sciage sur mesure", "Résineux et feuillus"],
   },
   {
     number: "03",
-    title: "Contreplaqué",
+    title: "Plywood", // استعملت الترجمة اللي اقترحنا
     description:
       "Panneaux contreplaqués de haute qualité pour tous types d'applications intérieures et extérieures.",
     items: ["Contreplaqué eucalyptus", "Contreplaqué peuplier", "Marine & aviation grade", "Formats standards & spéciaux"],
   },
   {
     number: "04",
-    title: "Stratifiés & Panneaux",
+    title: "Laminates & Panels", // استعملت الترجمة اللي اقترحنا
     description:
       "Stratifiés HPL, mélaminés et panneaux MDF pour la décoration intérieure et le mobilier.",
     items: ["Stratifié HPL haute pression", "Panneaux mélaminés", "MDF brut & mélaminé", "Large gamme de décors"],
   },
 ];
 
-export const GALLERY_IMAGES = Array.from({ length: 13 }, (_, i) => ({
-  src: `http://www.idmarouk.ma/img/gallerie/idmarouk${i + 1}.jpg`,
-  alt: `IDMAROUK Négoce - Bois & Dérivés ${i + 1}`,
-}));
+export const GALLERY_IMAGES = [
+  { src: "/images/imgi_2_idmarouk1.jpg",   alt: "Idmarouk Négoce — 01" },
+  { src: "/images/imgi_4_idmarouk2.jpg",   alt: "Idmarouk Négoce — 02" },
+  { src: "/images/imgi_5_idmarouk3.jpg",   alt: "Idmarouk Négoce — 03" },
+  { src: "/images/imgi_6_idmarouk4.jpg",   alt: "Idmarouk Négoce — 04" },
+  { src: "/images/imgi_7_idmarouk5.jpg",   alt: "Idmarouk Négoce — 05" },
+  { src: "/images/imgi_8_idmarouk6.jpg",   alt: "Idmarouk Négoce — 06" },
+  { src: "/images/imgi_9_idmarouk7.jpg",   alt: "Idmarouk Négoce — 07" },
+  { src: "/images/imgi_10_idmarouk8.jpg",  alt: "Idmarouk Négoce — 08" },
+  { src: "/images/imgi_11_idmarouk9.jpg",  alt: "Idmarouk Négoce — 09" },
+  { src: "/images/imgi_12_idmarouk10.jpg", alt: "Idmarouk Négoce — 10" },
+  { src: "/images/imgi_13_idmarouk11.jpg", alt: "Idmarouk Négoce — 11" },
+  { src: "/images/imgi_14_idmarouk12.jpg", alt: "Idmarouk Négoce — 12" },
+  { src: "/images/imgi_15_idmarouk13.jpg", alt: "Idmarouk Négoce — 13" },
+];
 
 export const VALUES = [
   {
@@ -80,5 +91,5 @@ export const VALUES = [
 ];
 
 export const LOGO_URL = "/logo.png";
-export const HERO_BG = "http://www.idmarouk.ma/img/bg-gallery.jpg";
+export const HERO_BG = "/images/hero.jpg"; // استعملت التصويرة المحلية
 export const SYMODD_LOGO = "http://www.idmarouk.ma/img/symodd.png";
