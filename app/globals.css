@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* 1. إعدادات الهوية البصرية (v4 Theme) */
+@theme {
+  /* الألوان الرسمية */
+  --color-brand-green: #2d5a27;
+  --color-brand-green-light: #4a8a3f;
+  --color-brand-red: #8b2020;
+  --color-brand-gold: #c8a96e;
+  --color-brand-black: #0a0a0a;
+  --color-brand-off-white: #f5f3ef;
+  --color-brand-warm-gray: #e8e4dc;
+  --color-brand-mid-gray: #9a9490;
+
+  /* الخطوط */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", system-ui, sans-serif;
+}
+
+/* 2. الإعدادات العامة (Global Styles) */
+@layer base {
+  :root {
+    --font-cormorant: var(--font-serif);
+    --font-jost: var(--font-sans);
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans font-light text-brand-black bg-white overflow-x-hidden antialiased;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif) !important;
+  }
+  
+  .font-sans {
+    font-family: var(--font-sans) !important;
+  }
+}
+
+/* 3. التعديلات الجمالية (Custom Styles) */
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-off-white;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-gold;
+  }
+
+  ::selection {
+    @apply bg-brand-gold text-brand-black;
+  }
+} 
