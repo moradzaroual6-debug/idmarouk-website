@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Preloader from "@/app/components/Preloader";
 
 export const metadata: Metadata = {
   title: "IDMAROUK Négoce — Bois & Dérivés | Agadir, Maroc",
@@ -19,10 +20,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      {/* Zdna hna "font-sans" bach Tailwind i-3ref i-طبق l-alwan w l-khotout.
-          W zdna "bg-white" bach n-7iydu l-mouchkil dyal l-white screen.
-      */}
       <body className="antialiased font-sans bg-white text-brand-black">
+        <Preloader />
         {children}
       </body>
     </html>

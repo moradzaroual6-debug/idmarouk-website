@@ -79,6 +79,7 @@ export default function Hero() {
         <div className="max-w-3xl">
 
 
+
           {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
