@@ -56,4 +56,10 @@
   ::selection {
     @apply bg-brand-gold text-brand-black;
   }
-} 
+
+  /* Navbar blur fade */
+  .mask-gradient {
+    mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+  }
+}
