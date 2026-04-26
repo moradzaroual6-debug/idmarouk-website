@@ -78,18 +78,6 @@ export default function Hero() {
       <div className="relative z-10 px-6 md:px-24 pb-16 md:pb-28 w-full">
         <div className="max-w-3xl">
 
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex items-center gap-4 mb-7"
-          >
-            <span className="block w-10 h-px bg-brand-gold" />
-            <span className="font-sans font-light text-[11px] tracking-[0.32em] uppercase text-brand-gold">
-              Depuis {SITE.founded} — Agadir, Maroc
-            </span>
-          </motion.div>
 
           {/* Heading */}
           <motion.h1
