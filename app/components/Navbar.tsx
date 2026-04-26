@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, LOGO_URL } from "@/app/lib/data";
@@ -18,7 +17,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // rAF-based active section — fires every animation frame for buttery smoothness
   useEffect(() => {
     const sectionIds = NAV_LINKS.map((l) => l.href.replace("#", ""));
 
@@ -41,7 +39,7 @@ export default function Navbar() {
       rafRef.current = requestAnimationFrame(updateActive);
     };
 
-    updateActive(); // run once on mount
+    updateActive();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -122,16 +120,13 @@ export default function Navbar() {
           scrolled ? "px-6 md:px-12 py-4" : "bg-transparent px-6 md:px-12 py-6"
         }`}
       >
-        {/* Logo */}
+        {/* Logo — plain <img> for reliable avif support */}
         <a onClick={() => handleNavClick("#accueil")} className="cursor-pointer">
-          <Image
+          <img
             src={LOGO_URL}
             alt="IDMAROUK Négoce"
-            width={160}
-            height={65}
             style={{ height: "48px", width: "auto" }}
             className="object-contain transition-all duration-300 brightness-90"
-            unoptimized
           />
         </a>
 
