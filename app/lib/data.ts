@@ -90,5 +90,5 @@ export const VALUES = [
   },
 ];
 
-export const LOGO_URL = "/logo.avif";
+export const LOGO_URL = "/logo.png";
 export const HERO_BG = "/images/hero.avif"; // استعملت التصويرة المحلية
